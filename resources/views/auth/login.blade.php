@@ -30,7 +30,7 @@
             </h1>
         </div>
 
-        <form method="POST" action="{{ url('/login') }}" class="flex flex-col gap-5">
+        <form method="POST" action="{{ secure_url('/login') }}" class="flex flex-col gap-5">
             @csrf
             
             <div class="flex flex-col gap-1.5">
