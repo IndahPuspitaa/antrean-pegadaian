@@ -22,7 +22,7 @@ class PanggilAntrean extends Page
 
     public function getSubheading(): ?string
     {
-        return 'Kelola dan panggil antrean pelanggan';
+        return 'Kelola dan panggil antrean nasabah dengan mudah';
     }
 
     public function mount(): void
