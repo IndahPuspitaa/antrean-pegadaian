@@ -15,6 +15,7 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')->searchable(),
+                TextColumn::make('username')->searchable(),
                 TextColumn::make('email')->searchable(),
                 TextColumn::make('role')->badge(),
                // TextColumn::make('counter.name')
