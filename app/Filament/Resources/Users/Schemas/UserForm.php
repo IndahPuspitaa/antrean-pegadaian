@@ -25,13 +25,17 @@ class UserForm
                     ->required()
                     ->maxLength(255),
                 TextInput::make('password')
+                    ->label('Password')
                     ->password()
+                    ->revealable()
                     ->dehydrated(fn ($state) => filled($state))
                     ->required(fn (string $context): bool => $context === 'create'),
                 Select::make('role')
+                    ->label('Hak Akses')
                     ->options([
                         'admin' => 'Admin',
                         'kasir' => 'Kasir',
+                        'kiosk' => 'Kiosk',
                     ])
                     ->required(),
                 Select::make('counter_id')
