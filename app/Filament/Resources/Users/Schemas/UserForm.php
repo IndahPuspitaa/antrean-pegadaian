@@ -15,6 +15,11 @@ class UserForm
                 TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+                TextInput::make('username')
+                    ->label('Username') 
+                    ->required()
+                    ->maxLength(255)
+                    ->unique(ignoreRecord: true),
                 TextInput::make('email')
                     ->email()
                     ->required()
@@ -33,7 +38,6 @@ class UserForm
                     ->label('Tugas di Loket')
                     ->relationship('counter', 'name')
                     ->placeholder('Pilih Loket (Hanya untuk Kasir)')
-                    ->helperText('Loket 1 untuk Kasir Utama, Loket 2 untuk bantuan magang.'),
             ]);
     }
 }
