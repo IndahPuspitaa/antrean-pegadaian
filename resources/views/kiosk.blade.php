@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <title>Kiosk Antrean Pegadaian</title>
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
-    {{-- ✅ Fix: hapus duplicate font link --}}
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
@@ -14,16 +13,17 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
                 },
             },
         }
     </script>
+    <style>
+        #step-2 { display: none !important; }
+        #step-1 { display: flex; flex-direction: column; align-items: center; }
+    </style>
 </head>
 
-{{-- ✅ Fix: hapus min-h-screen dan justify-center agar tidak ada space kosong --}}
 <body class="bg-[linear-gradient(117deg,rgba(255,255,255,1)_0%,rgba(247,249,248,1)_40%,rgba(232,245,238,1)_100%)] flex flex-col items-center pt-8 pb-8 font-sans select-none overflow-x-hidden">
 
     {{-- Step 1: Pilih Layanan --}}
@@ -52,12 +52,12 @@
                             @php
                                 $serviceNameLower = strtolower($service->name);
                                 $iconCode = match($serviceNameLower) {
-                                    'cicilan'   => 'mdi:wallet',
+                                    'cicilan'    => 'mdi:wallet',
                                     'perpanjang' => 'mdi:calendar-plus',
-                                    'tabungan'  => 'mdi:gold',
-                                    'pelunasan' => 'mdi:hand-coin',
-                                    'angsuran'  => 'mdi:receipt-text',
-                                    default     => 'mdi:dots-horizontal-circle'
+                                    'tabungan'   => 'mdi:gold',
+                                    'pelunasan'  => 'mdi:hand-coin',
+                                    'angsuran'   => 'mdi:receipt-text',
+                                    default      => 'mdi:dots-horizontal-circle'
                                 };
                             @endphp
                             <span class="iconify text-white text-[40px]" data-icon="{{ $iconCode }}"></span>
@@ -83,7 +83,6 @@
             @endforeach
         </div>
 
-        {{-- Info speaker — tepat di bawah kartu layanan --}}
         <div class="w-full flex justify-center mt-6 mb-4 shrink-0">
             <div class="flex items-center justify-center px-5 py-2 md:py-2.5 bg-white rounded-full shadow-[0px_2px_8px_rgba(0,0,0,0.04)] border border-gray-100/50">
                 <span class="iconify text-[#00ab4e] w-5 h-5 mr-2.5 shrink-0" data-icon="mdi:volume-high"></span>
@@ -93,11 +92,10 @@
             </div>
         </div>
     </div>
-    {{-- ✅ Fix: hapus </div> extra yang tidak punya pasangan --}}
 
     {{-- Step 2: Form Data Nasabah --}}
-    <div id="step-2" class="w-full flex flex-col items-center justify-center hidden p-4">
-        <div class="w-full max-w-[460px] flex flex-col items-center relative text-center px-4 mb-2">
+    <div id="step-2" class="w-full flex-col items-center justify-center p-4">
+        <div class="w-full max-w-[460px] flex flex-col items-center relative text-center px-4 mb-2 mx-auto">
 
             <div class="flex flex-col items-center">
                 <div class="w-14 h-14 bg-[#00ab4e] rounded-2xl flex items-center justify-center text-white mb-3 shadow-sm border border-gray-100">
@@ -146,7 +144,8 @@
     <script>
         function goToStep2(serviceId, serviceName, waitingCount) {
             document.getElementById('step-1').style.display = 'none';
-            document.getElementById('step-2').style.display = 'flex';
+            document.getElementById('step-2').style.setProperty('display', 'flex', 'important');
+            document.getElementById('step-2').style.flexDirection = 'column';
             document.getElementById('target-service-id').value = serviceId;
             document.getElementById('target-service-name').innerText = serviceName;
             document.getElementById('target-waiting-count').innerText = waitingCount;
@@ -155,8 +154,9 @@
         }
 
         function backToStep1() {
-            document.getElementById('step-2').style.display = 'none';
+            document.getElementById('step-2').style.setProperty('display', 'none', 'important');
             document.getElementById('step-1').style.display = 'flex';
+            document.getElementById('step-1').style.flexDirection = 'column';
         }
 
         @if(session('success_queue'))
