@@ -24,7 +24,7 @@
 </style>
 </head>
 
-<body class="min-h-screen bg-[linear-gradient(117deg,rgba(255,255,255,1)_0%,rgba(247,249,248,1)_40%,rgba(232,245,238,1)_100%)] flex flex-col items-center pt-4 pb-8 font-sans select-none overflow-x-hidden overflow-y-auto">
+<body class="bg-[linear-gradient(117deg,rgba(255,255,255,1)_0%,rgba(247,249,248,1)_40%,rgba(232,245,238,1)_100%)] flex flex-col items-center justify-start pt-4 pb-4 font-sans select-none overflow-x-hidden overflow-y-auto">
 
     {{-- Step 1: Pilih Layanan --}}
     <div id="step-1" class="w-full flex flex-col items-center">
@@ -94,7 +94,7 @@
     </div>
 
     {{-- Step 2: Form Data Nasabah --}}
-<div id="step-2" class="w-full flex-col items-center justify-start p-4 m-0">
+<div id="step-2" class="w-full flex flex-col items-center justify-start p-4 m-0">
        <div class="w-full max-w-[460px] flex flex-col items-center relative text-center px-4 mb-0 mx-auto">
 
             <div class="flex flex-col items-center">
@@ -143,33 +143,33 @@
 
     <script>
         function goToStep2(serviceId, serviceName, waitingCount) {
-    const step1 = document.getElementById('step-1');
-    const step2 = document.getElementById('step-2');
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
 
-    step1.style.display = 'none';
+            step1.style.display = 'none';
+            step2.classList.remove('hidden');
+            step2.style.display = 'flex';
+            step2.style.flexDirection = 'column';
+            step2.style.alignItems = 'center';
+            step2.style.justifyContent = 'flex-start';
 
-    step2.style.display = 'flex';
-    step2.style.flexDirection = 'column';
-    step2.style.alignItems = 'center';
-    step2.style.justifyContent = 'flex-start';
-
-    document.getElementById('target-service-id').value = serviceId;
-    document.getElementById('target-service-name').innerText = serviceName;
-    document.getElementById('target-waiting-count').innerText = waitingCount;
-    document.getElementById('customer-name-field').value = '';
-    document.getElementById('customer-name-field').focus();
-}
+            document.getElementById('target-service-id').value = serviceId;
+            document.getElementById('target-service-name').innerText = serviceName;
+            document.getElementById('target-waiting-count').innerText = waitingCount;
+            document.getElementById('customer-name-field').value = '';
+            document.getElementById('customer-name-field').focus();
+        }
 
         function backToStep1() {
-    const step1 = document.getElementById('step-1');
-    const step2 = document.getElementById('step-2');
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
 
-    step2.style.display = 'none';
-
-    step1.style.display = 'flex';
-    step1.style.flexDirection = 'column';
-    step1.style.alignItems = 'center';
-}
+            step2.style.display = 'none';
+            step1.style.display = 'flex';
+            step1.style.flexDirection = 'column';
+            step1.style.alignItems = 'center';
+            
+        }
         @if(session('success_queue'))
             @php
                 $q = session('success_queue');
