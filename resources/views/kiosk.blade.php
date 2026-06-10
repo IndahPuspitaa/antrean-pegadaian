@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="bg-fixed min-h-screen bg-[linear-gradient(117deg,rgba(255,255,255,1)_0%,rgba(247,249,248,1)_40%,rgba(232,245,238,1)_100%)]">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="utf-8" />
     <title>Kiosk Antrean Pegadaian</title>
-    <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="{{ asset('images/logo-pegadaian.png') }}" type="image/png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
@@ -22,7 +23,9 @@
         }
     </script>
 </head>
-<body class="min-h-screen bg-[linear-gradient(117deg,rgba(255,255,255,1)_0%,rgba(247,249,248,1)_40%,rgba(232,245,238,1)_100%)] flex flex-col items-center justify-start pt-12 pb-16 overflow-y-auto select-none font-sans">
+<body class="flex flex-col items-center justify-start pt-8 pb-10 font-sans select-none overflow-x-hidden">
+
+    <div id="step-1" class="w-full flex flex-col items-center justify-center p-4" style="display: flex;">
         <div class="flex flex-col items-center mt-2 mb-6 px-4 text-center shrink-0">
             <div class="flex items-center justify-center mb-4">
                 <img src="{{ asset('images/logo-pegadaian.png') }}" alt="Logo Pegadaian" class="h-[55px] object-contain" />
@@ -87,8 +90,9 @@
                 </p>
             </div>
         </div>
+    </div> 
 
-    </div> <div id="step-2" class="w-full flex flex-col items-center justify-center hidden p-4">
+    <div id="step-2" class="w-full flex-col items-center justify-center p-4" style="display: none;">
         <div class="w-full max-w-[460px] flex flex-col items-center relative text-center px-4 mb-2">
             
             <div class="flex flex-col items-center">
@@ -134,24 +138,25 @@
                     </button>
                 </div>
             </form>
-
         </div>
-    </div> <script>
+    </div> 
+
+    <script>
         function goToStep2(serviceId, serviceName, waitingCount) {
+            document.getElementById('step-1').style.display = 'none';
+            document.getElementById('step-2').style.display = 'flex';
+            
             document.getElementById('target-service-id').value = serviceId;
             document.getElementById('target-service-name').innerText = serviceName;
             document.getElementById('target-waiting-count').innerText = waitingCount;
             document.getElementById('customer-name-field').value = '';
-
-            document.getElementById('step-1').classList.add('hidden');
-            document.getElementById('step-2').classList.remove('hidden');
             
             document.getElementById('customer-name-field').focus();
         }
 
         function backToStep1() {
-            document.getElementById('step-2').classList.add('hidden');
-            document.getElementById('step-1').classList.remove('hidden');
+            document.getElementById('step-2').style.display = 'none';
+            document.getElementById('step-1').style.display = 'flex';
         }
 
         @if(session('success_queue'))
@@ -204,10 +209,8 @@
             });
         @endif
 
-        // FUNGSI AUTO-UPDATE TANPA REFRESH (AJAX POLLING)
         setInterval(function() {
-            // Jangan lakukan auto-update jika nasabah sedang berada di Langkah 2 (isi form)
-            if (!document.getElementById('step-2').classList.contains('hidden')) {
+            if (document.getElementById('step-2').style.display !== 'none') {
                 return;
             }
 
@@ -222,7 +225,7 @@
                     }
                 })
                 .catch(error => console.error('Gagal mengambil data terbaru:', error));
-        }, 5000); // Setiap 5 detik
+        }, 5000); 
     </script>
 </body>
 </html>
