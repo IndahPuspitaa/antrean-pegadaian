@@ -28,7 +28,7 @@
     <div id="step-1" class="w-full flex flex-col items-center justify-center p-4" style="display: flex;">
         <div class="flex flex-col items-center mt-2 mb-6 px-4 text-center shrink-0">
             <div class="flex items-center justify-center mb-4">
-                <img src="{{ asset('images/logo-pegadaian.png') }}" alt="Logo Pegadaian" class="h-[55px] object-contain" />
+                <img src="{{ asset('images/favicon.png') }}" alt="Logo Pegadaian" class="h-[55px] object-contain" />
             </div>
             
             <h1 class="font-bold text-[#004e44] text-4xl tracking-tight mb-1">
