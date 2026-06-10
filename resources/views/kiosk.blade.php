@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="utf-8" />
     <title>Kiosk Antrean Pegadaian</title>
+    <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
@@ -20,9 +22,7 @@
         }
     </script>
 </head>
-<body class="min-h-screen bg-[linear-gradient(117deg,rgba(255,255,255,1)_0%,rgba(247,249,248,1)_40%,rgba(232,245,238,1)_100%)] flex flex-col items-center justify-center py-4 overflow-y-auto select-none font-sans">
-
-    <div id="step-1" class="w-full flex flex-col items-center justify-center p-4">
+<body class="min-h-screen bg-[linear-gradient(117deg,rgba(255,255,255,1)_0%,rgba(247,249,248,1)_40%,rgba(232,245,238,1)_100%)] flex flex-col items-center justify-start pt-12 pb-16 overflow-y-auto select-none font-sans">
         <div class="flex flex-col items-center mt-2 mb-6 px-4 text-center shrink-0">
             <div class="flex items-center justify-center mb-4">
                 <img src="{{ asset('images/logo-pegadaian.png') }}" alt="Logo Pegadaian" class="h-[55px] object-contain" />
@@ -91,16 +91,12 @@
     </div> <div id="step-2" class="w-full flex flex-col items-center justify-center hidden p-4">
         <div class="w-full max-w-[460px] flex flex-col items-center relative text-center px-4 mb-2">
             
-            <button type="button" onclick="backToStep1()" class="absolute left-0 top-2 text-[#00ab4e] hover:text-[#008f41] transition-colors focus:outline-none">
-                <span class="iconify text-3xl" data-icon="solar:alt-arrow-left-linear"></span>
-            </button>
-            
             <div class="flex flex-col items-center">
                 <div class="w-14 h-14 bg-[#00ab4e] rounded-2xl flex items-center justify-center text-white mb-3 shadow-sm border border-gray-100">
                     <span class="iconify text-3xl" data-icon="solar:user-bold"></span>
                 </div>
                 
-                <h2 class="font-bold text-[#004e44] text-3xl tracking-tight mb-2">Data Pelanggan</h2>
+                <h2 class="font-bold text-[#004e44] text-3xl tracking-tight mb-2">Data Nasabah</h2>
                 
                 <div class="px-5 py-1.5 bg-white rounded-full shadow-[0px_2px_8px_rgba(0,0,0,0.02)] border border-gray-100 text-sm font-medium text-[#004e44] mb-5">
                     <span id="target-service-name" class="font-bold">Layanan</span>
@@ -194,13 +190,16 @@
                 timerProgressBar: false,
                 didOpen: () => {
                     let timeLeft = 5;
-                    const timerInterval = setInterval(() => {
+                    window.timerInterval = setInterval(() => {
                         timeLeft--;
                         const timerText = document.getElementById('swal-timer');
                         if (timerText) {
                             timerText.innerText = `Layar ini akan kembali otomatis dalam ${timeLeft} detik...`;
                         }
                     }, 1000);
+                },
+                willClose: () => {
+                    clearInterval(window.timerInterval);
                 }
             });
         @endif

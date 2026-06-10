@@ -81,11 +81,9 @@
             
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
-                // Ganti ikon jadi mata terbuka
                 eyeIcon.setAttribute('data-icon', 'solar:eye-bold-duotone');
             } else {
                 passwordInput.type = 'password';
-                // Kembalikan ke ikon mata tertutup
                 eyeIcon.setAttribute('data-icon', 'solar:eye-closed-bold-duotone');
             }
         }
