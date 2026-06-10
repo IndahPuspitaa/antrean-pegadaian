@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body class="bg-[linear-gradient(117deg,rgba(255,255,255,1)_0%,rgba(247,249,248,1)_40%,rgba(232,245,238,1)_100%)] flex flex-col items-center pt-8 pb-8 font-sans select-none overflow-x-hidden">
+<body class="bg-[linear-gradient(117deg,rgba(255,255,255,1)_0%,rgba(247,249,248,1)_40%,rgba(232,245,238,1)_100%)] flex flex-col items-center pt-0 pb-0 font-sans select-none overflow-hidden">
 
     {{-- Step 1: Pilih Layanan --}}
     <div id="step-1" class="w-full flex flex-col items-center">
@@ -94,8 +94,8 @@
     </div>
 
     {{-- Step 2: Form Data Nasabah --}}
-    <div id="step-2" class="w-full flex-col items-center justify-center p-4">
-        <div class="w-full max-w-[460px] flex flex-col items-center relative text-center px-4 mb-2 mx-auto">
+   <div id="step-2" class="w-full flex flex-col items-center justify-start p-0 m-0 hidden">
+       <div class="w-full max-w-[460px] flex flex-col items-center relative text-center px-4 mb-0 mx-auto">
 
             <div class="flex flex-col items-center">
                 <div class="w-14 h-14 bg-[#00ab4e] rounded-2xl flex items-center justify-center text-white mb-3 shadow-sm border border-gray-100">
@@ -143,9 +143,15 @@
 
     <script>
         function goToStep2(serviceId, serviceName, waitingCount) {
-            document.getElementById('step-1').style.display = 'none';
-            document.getElementById('step-2').style.setProperty('display', 'flex', 'important');
-            document.getElementById('step-2').style.flexDirection = 'column';
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
+            step1.style.display = 'none';
+            step2.classList.remove('hidden');
+            step2.style.display = 'flex';
+            step2.style.flexDirection = 'column';
+            step2.style.alignItems = 'center';
+            step2.style.justifyContent = 'flex-start';
+
             document.getElementById('target-service-id').value = serviceId;
             document.getElementById('target-service-name').innerText = serviceName;
             document.getElementById('target-waiting-count').innerText = waitingCount;
@@ -154,9 +160,12 @@
         }
 
         function backToStep1() {
-            document.getElementById('step-2').style.setProperty('display', 'none', 'important');
-            document.getElementById('step-1').style.display = 'flex';
-            document.getElementById('step-1').style.flexDirection = 'column';
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
+            step2.classList.add('hidden');
+            step2.style.display = 'none';
+            step1.style.display = 'flex';
+            step1.style.flexDirection = 'column';
         }
 
         @if(session('success_queue'))
