@@ -94,8 +94,8 @@
     </div>
 
     {{-- Step 2: Form Data Nasabah --}}
-<div id="step-2" class="w-full flex flex-col items-center justify-start p-4 m-0">
-       <div class="w-full max-w-[460px] flex flex-col items-center relative text-center px-4 mb-0 mx-auto">
+    <div id="step-2" class="w-full flex-col items-center justify-center p-4" style="display: none;">
+        <div class="w-full max-w-[460px] flex flex-col items-center relative text-center px-4 mb-2 mx-auto">
 
             <div class="flex flex-col items-center">
                 <div class="w-14 h-14 bg-[#00ab4e] rounded-2xl flex items-center justify-center text-white mb-3 shadow-sm border border-gray-100">
@@ -119,7 +119,7 @@
                         placeholder="Masukkan nama Anda"
                         class="w-full px-4 py-3.5 bg-[#f7f9f8] border border-gray-200 rounded-xl text-base font-medium text-[#004e44] focus:outline-none focus:ring-2 focus:ring-[#00ab4e] focus:bg-white placeholder-gray-400"
                         autocomplete="off">
-                    <p class="text-xs text-gray-400 mt-3 leading-relaxed">Anda dapat mengosongkan nama jika ingin menggunakan kode pelanggan</p>
+                    <p class="text-xs text-gray-400 mt-3 leading-relaxed">Anda dapat mengosongkan nama jika ingin menggunakan kode nasabah</p>
                 </div>
 
                 <div class="bg-white rounded-[24px] shadow-[0px_8px_32px_rgba(0,0,0,0.04)] border border-gray-100/50 p-6 w-full mb-5 text-left">
