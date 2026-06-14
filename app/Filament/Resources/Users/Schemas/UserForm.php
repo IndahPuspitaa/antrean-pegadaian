@@ -15,23 +15,28 @@ class UserForm
                 TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+
                 TextInput::make('username')
-                    ->label('Username') 
+                    ->label('Username')
                     ->required()
                     ->maxLength(255)
                     ->unique(ignoreRecord: true),
+
                 TextInput::make('email')
                     ->email()
                     ->required()
                     ->maxLength(255),
+
                 TextInput::make('password')
                     ->label('Password')
                     ->password()
-                    ->revealable()
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
                     ->dehydrated(fn ($state) => filled($state))
-                    ->required(fn (string $context): bool => $context === 'create'),
+                    ->required(fn (string $context): bool => $context === 'create')
+                    ->maxLength(255),
+
                 Select::make('role')
-                    ->label('Hak Akses')
+                    ->label('Role Akses')
                     ->options([
                         'admin' => 'Admin',
                         'kasir' => 'Kasir',
@@ -42,6 +47,7 @@ class UserForm
                     ->label('Tugas di Loket')
                     ->relationship('counter', 'name')
                     ->placeholder('Pilih Loket (Hanya untuk Kasir)')
+                    ->helperText('Loket 1 untuk Kasir Utama, Loket 2 untuk bantuan magang.'),
             ]);
     }
 }

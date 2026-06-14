@@ -29,9 +29,9 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => \Filament\Support\Colors\Color::hex('#008236'),
                 'gray' => \Filament\Support\Colors\Color::Slate,
             ])
-            ->favicon(asset('images/favicon.png'))
             ->font('Inter')
             ->brandName('') 
+            ->css(asset('css/custom-sidebar.css'))
             
             ->renderHook(
                 PanelsRenderHook::TOPBAR_START,

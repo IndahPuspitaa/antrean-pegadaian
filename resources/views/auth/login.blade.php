@@ -30,7 +30,7 @@
             </h1>
         </div>
 
-        <form method="POST" action="{{ secure_url('/login') }}" class="flex flex-col gap-5">
+        <form method="POST" action="{{ url('/login') }}" class="flex flex-col gap-5">
             @csrf
             
             <div class="flex flex-col gap-1.5">
@@ -81,9 +81,11 @@
             
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
+                // Ganti ikon jadi mata terbuka
                 eyeIcon.setAttribute('data-icon', 'solar:eye-bold-duotone');
             } else {
                 passwordInput.type = 'password';
+                // Kembalikan ke ikon mata tertutup
                 eyeIcon.setAttribute('data-icon', 'solar:eye-closed-bold-duotone');
             }
         }

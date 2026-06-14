@@ -113,8 +113,7 @@
     <script>
         document.addEventListener('livewire:initialized', () => {
             Livewire.on('queue-called', ({ ticketNumber, counterName }) => {
-                const nomorSpasi = ticketNumber.replace(/([A-Za-z]+)(\d+)/, '$1 $2');
-                const text = `Nomor antrean ${nomorSpasi}, silakan menuju ${counterName}`;
+                const text = `Nomor antrean ${ticketNumber.split('').join(' ')}, silakan menuju ${counterName}`;
                 const utterance = new SpeechSynthesisUtterance(text);
                 utterance.lang = 'id-ID';
                 utterance.rate = 0.9;

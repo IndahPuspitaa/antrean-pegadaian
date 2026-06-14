@@ -18,9 +18,9 @@ class UsersTable
                 TextColumn::make('username')->searchable(),
                 TextColumn::make('email')->searchable(),
                 TextColumn::make('role')->badge(),
-               // TextColumn::make('counter.name')
-                //    ->label('Loket')
-                //    ->default('N/A'),
+                TextColumn::make('counter.name')
+                    ->label('Loket')
+                    ->default('N/A'),
             ])
             ->actions([
                 EditAction::make(),
