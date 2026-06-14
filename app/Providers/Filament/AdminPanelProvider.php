@@ -42,11 +42,6 @@ class AdminPanelProvider extends PanelProvider
                 PanelsRenderHook::HEAD_END,
                 fn (): string => '<link rel="stylesheet" href="' . asset('css/custom-sidebar.css') . '">'
             )
-            
-            ->renderHook(
-                PanelsRenderHook::TOPBAR_START,
-                fn (): string => view('components.headbar-title')
-            )
 
             ->renderHook(
                 PanelsRenderHook::SIDEBAR_FOOTER,
