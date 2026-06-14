@@ -32,7 +32,7 @@ class AdminPanelProvider extends PanelProvider
             ->font('Inter')
             ->brandName('') 
             ->sidebarWidth('16rem')
-            
+
             ->renderHook(
                 PanelsRenderHook::HEAD_END,
                 fn (): string => '<link rel="stylesheet" href="' . asset('css/custom-sidebar.css') . '">'
@@ -46,6 +46,11 @@ class AdminPanelProvider extends PanelProvider
             ->renderHook(
                 PanelsRenderHook::USER_MENU_BEFORE,
                 fn (): string => view('components.header-clock')
+            )
+
+            ->renderHook(
+                PanelsRenderHook::SIDEBAR_NAV_END,
+                fn (): string => view('components.sidebar-logout')
             )
 
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
