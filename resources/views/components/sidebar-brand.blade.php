@@ -1,8 +1,4 @@
-<div style="
-    padding: 1.5rem 1rem 1rem 1rem; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-    margin-bottom: 1rem;
-">
+<div style="padding: 1.5rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); width: 100%;">
     <div style="display: flex; align-items: center; gap: 0.75rem;">
         <img src="{{ asset('images/logo-pegadaian.png') }}" alt="Logo" style="height: 35px; width: auto;">
         <div style="display: flex; flex-direction: column;">
