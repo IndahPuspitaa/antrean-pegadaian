@@ -34,7 +34,7 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarWidth('16rem')
 
             ->renderHook(
-                \Filament\View\PanelsRenderHook::SIDEBAR_NAV_START, 
+                \Filament\View\PanelsRenderHook::SIDEBAR_HEADER, // Gunakan SIDEBAR_HEADER
                 fn (): string => view('components.header-brand') 
             )
 
