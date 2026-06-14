@@ -35,7 +35,7 @@ class AdminPanelProvider extends PanelProvider
 
             ->renderHook(
                 \Filament\View\PanelsRenderHook::SIDEBAR_NAV_START, 
-                fn (): string => view('components.header-brand')
+                fn (): string => view('components.header-brand') 
             )
 
             ->renderHook(
