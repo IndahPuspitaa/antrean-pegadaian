@@ -34,18 +34,18 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarWidth('16rem')
 
             ->renderHook(
+                \Filament\View\PanelsRenderHook::SIDEBAR_HEADER, 
+                fn (): string => view('components.header-brand')
+            )
+
+            ->renderHook(
                 PanelsRenderHook::HEAD_END,
                 fn (): string => '<link rel="stylesheet" href="' . asset('css/custom-sidebar.css') . '">'
-)
+            )
             
             ->renderHook(
                 PanelsRenderHook::TOPBAR_START,
                 fn (): string => view('components.headbar-title')
-            )
-
-            ->renderHook(
-                PanelsRenderHook::USER_MENU_BEFORE,
-                fn (): string => view('components.header-clock')
             )
 
             ->renderHook(
