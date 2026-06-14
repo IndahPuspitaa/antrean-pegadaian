@@ -21,6 +21,9 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-sidebar-item-label,
 aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
     color: #008236 !important; 
 }
+.fi-sidebar {
+    padding-top: 60px !important; 
+}
 
 .fi-sidebar-nav {
     margin-top: 0 !important;
