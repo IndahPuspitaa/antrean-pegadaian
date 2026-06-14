@@ -8,15 +8,16 @@ aside.fi-sidebar .fi-icon {
     color: #ffffff !important;
 }
 
-aside.fi-sidebar .fi-sidebar-item-button:hover {
+aside.fi-sidebar li.fi-sidebar-item > a:hover {
     background-color: rgba(1, 102, 48, 0.8) !important;
 }
 
-aside.fi-sidebar .fi-sidebar-item-active .fi-sidebar-item-button {
+aside.fi-sidebar li.fi-sidebar-item.fi-active > a {
     background-color: #ffffff !important;
+    border-radius: 0.5rem !important;
 }
 
-aside.fi-sidebar .fi-sidebar-item-active .fi-sidebar-item-label,
-aside.fi-sidebar .fi-sidebar-item-active .fi-icon {
+aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-sidebar-item-label,
+aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
     color: #008236 !important; 
 }
