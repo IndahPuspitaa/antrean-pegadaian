@@ -49,7 +49,7 @@ class AdminPanelProvider extends PanelProvider
             )
 
             ->renderHook(
-                PanelsRenderHook::SIDEBAR_NAV_END,
+                PanelsRenderHook::SIDEBAR_FOOTER,
                 fn (): string => view('components.sidebar-logout')
             )
 
