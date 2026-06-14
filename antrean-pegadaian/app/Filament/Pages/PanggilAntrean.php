@@ -15,6 +15,7 @@ class PanggilAntrean extends Page
 
     protected static ?string $navigationLabel = 'Panggil Antrean';
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPhone;
+    protected static ?string $navigationGroup = 'Operasional Kasir';
     protected static ?int $navigationSort = 3;
     protected static ?string $title = 'Panggil Antrean';
 
