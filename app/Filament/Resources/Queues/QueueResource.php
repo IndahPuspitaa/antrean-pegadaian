@@ -25,7 +25,7 @@ class QueueResource extends Resource
     protected static ?string $model = Queue::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedQueueList;
-    protected static ?string $navigationGroup = 'Operasional Kasir';
+    protected static string|\UnitEnum|null $navigationGroup = 'Operasional Kasir';
 
     protected static ?string $navigationLabel = 'Data Antrean';
 

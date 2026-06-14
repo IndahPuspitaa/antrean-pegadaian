@@ -25,8 +25,7 @@ class CounterResource extends Resource
     protected static ?string $model = Counter::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedComputerDesktop;
-    protected static ?string $navigationGroup = 'Master Data';
-
+    protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
     protected static ?string $navigationLabel = 'Loket';
 
     protected static ?string $modelLabel = 'Loket';
