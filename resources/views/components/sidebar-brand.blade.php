@@ -1,7 +1,7 @@
 <div style="
     background-color: #008236; 
-    padding: 1.25rem; 
-    width: 256px; /* Sesuai dengan lebar sidebar 16rem */
+    padding: 1.25rem 1rem; 
+    width: 256px; 
     position: absolute; 
     top: 0; 
     left: 0; 
@@ -9,6 +9,7 @@
     align-items: center; 
     gap: 0.75rem;
     z-index: 100;
+    margin: 0; /* Pastikan margin 0 */
 ">
     <img src="{{ asset('images/logo-pegadaian.png') }}" alt="Logo" style="height: 35px; width: auto;">
     <div style="display: flex; flex-direction: column;">
