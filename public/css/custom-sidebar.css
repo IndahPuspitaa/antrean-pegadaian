@@ -29,3 +29,14 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
+
+.fi-sidebar-group-collapse-button svg {
+    display: none !important;
+}
+
+.fi-sidebar-group-label {
+    color: #d1fae5 !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
