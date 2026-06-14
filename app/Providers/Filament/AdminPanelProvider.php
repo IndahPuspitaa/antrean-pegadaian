@@ -31,7 +31,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->font('Inter')
             ->brandName('') 
-            ->css(asset('css/custom-sidebar.css'))
+            ->renderHook(
+                PanelsRenderHook::HEAD_END,
+                fn (): string => '<link rel="stylesheet" href="' . asset('css/custom-sidebar.css') . '">'
+)
             
             ->renderHook(
                 PanelsRenderHook::TOPBAR_START,
