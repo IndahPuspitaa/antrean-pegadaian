@@ -1,25 +1,22 @@
-
-aside.fi-sidebar {
-    background-color: #00A651 !important; 
+aside.fi-sidebar, aside.fi-sidebar header {
+    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
 }
-
-
-aside.fi-sidebar header {
-    background-color: #00A651 !important;
-}
-
 
 aside.fi-sidebar .fi-sidebar-item-label,
-aside.fi-sidebar .fi-sidebar-item-icon,
-aside.fi-sidebar .fi-sidebar-group-label {
+aside.fi-sidebar .fi-sidebar-group-label,
+aside.fi-sidebar .fi-icon {
     color: #ffffff !important;
 }
 
 aside.fi-sidebar .fi-sidebar-item-button:hover {
-    background-color: #008741 !important;
+    background-color: rgba(1, 102, 48, 0.8) !important;
 }
 
+aside.fi-sidebar .fi-sidebar-item-active .fi-sidebar-item-button {
+    background-color: #ffffff !important;
+}
 
-aside.fi-sidebar .fi-sidebar-item-active {
-    background-color: #006631 !important;
+aside.fi-sidebar .fi-sidebar-item-active .fi-sidebar-item-label,
+aside.fi-sidebar .fi-sidebar-item-active .fi-icon {
+    color: #008236 !important; 
 }
