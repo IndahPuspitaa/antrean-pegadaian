@@ -37,7 +37,7 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
 aside.fi-sidebar .fi-sidebar-group-label {
     color: #d1fae5 !important; 
     font-size: 0.65rem !important; 
-    font-weight: 600 !important; 
+    font-weight: 400 !important; 
     text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
+    letter-spacing: 0.08em !important;
 }
