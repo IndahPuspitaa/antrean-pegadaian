@@ -72,12 +72,16 @@ class ServiceCategoryResource extends Resource
             ])
             ->filters([])
             ->actions([
-                EditAction::make(),
-                DeleteAction::make(),
+            EditAction::make()
+                ->label('Ubah'),
+                
+            DeleteAction::make()
+                ->label('Hapus'),
             ])
             ->bulkActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+            BulkActionGroup::make([
+                DeleteBulkAction::make()
+                    ->label('Hapus Terpilih'),
                 ]),
             ]);
     }

@@ -10,6 +10,11 @@ class ListServiceCategories extends ListRecords
 {
     protected static string $resource = ServiceCategoryResource::class;
 
+    public function getSubheading(): ?string
+    {
+        return 'Kelola kategori layanan kasir';
+    }
+
     protected function getHeaderActions(): array
     {
         return [
