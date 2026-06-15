@@ -13,7 +13,17 @@ class EditCounter extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            \Filament\Actions\DeleteAction::make()->label('Hapus'),
         ];
+    }
+
+    protected function getSaveFormAction(): \Filament\Actions\Action
+    {
+        return parent::getSaveFormAction()->label('Simpan Perubahan');
+    }
+
+    protected function getCancelFormAction(): \Filament\Actions\Action
+    {
+        return parent::getCancelFormAction()->label('Batal');
     }
 }

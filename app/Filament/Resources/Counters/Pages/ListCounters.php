@@ -10,10 +10,10 @@ class ListCounters extends ListRecords
 {
     protected static string $resource = CounterResource::class;
 
-    protected function getHeaderActions(): array
+        protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            \Filament\Actions\CreateAction::make()->label('Tambah Loket Baru'),
         ];
     }
 }
