@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup; 
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -17,6 +18,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
+
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
@@ -26,21 +28,23 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->colors([
-                'primary' => \Filament\Support\Colors\Color::hex('#008236'),
-                'gray' => \Filament\Support\Colors\Color::Slate,
+                 'primary' => Color::hex('#008236'),
+                 'gray' => Color::Slate,
             ])
             ->font('Inter')
             ->brandName('') 
             ->sidebarWidth('16rem')
+            ->css(asset('css/custom-sidebar.css'))
+            ->navigationGroups([
+                NavigationGroup::make('Master Data')
+                    ->collapsible(false),
+                NavigationGroup::make('Operasional Kasir')
+                    ->collapsible(false),
+            ])
 
             ->renderHook(
                 \Filament\View\PanelsRenderHook::TOPBAR_START, 
                 fn (): string => view('components.sidebar-brand') 
-            )
-
-            ->renderHook(
-                PanelsRenderHook::HEAD_END,
-                fn (): string => '<link rel="stylesheet" href="' . asset('css/custom-sidebar.css') . '">'
             )
 
             ->renderHook(
