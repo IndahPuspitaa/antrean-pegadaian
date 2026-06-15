@@ -30,7 +30,9 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
     padding-top: 0 !important;
 }
 
-.fi-sidebar-group-collapse-button svg {
+.fi-sidebar-group-button svg,
+.fi-sidebar-group-collapse-button svg,
+button[x-on\:click*="toggleCollapsed"] svg {
     display: none !important;
 }
 
@@ -39,4 +41,8 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
     font-size: 0.75rem !important;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+.fi-sidebar-group-button {
+    justify-content: flex-start !important;
 }
