@@ -10,6 +10,11 @@ class EditCounter extends EditRecord
 {
     protected static string $resource = CounterResource::class;
 
+    public function getHeading(): string
+    {
+        return 'Ubah Loket';
+    }
+
     protected function getHeaderActions(): array
     {
         return [

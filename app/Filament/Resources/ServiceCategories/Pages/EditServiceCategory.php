@@ -10,6 +10,11 @@ class EditServiceCategory extends EditRecord
 {
     protected static string $resource = ServiceCategoryResource::class;
 
+    public function getHeading(): string
+    {
+        return 'Ubah Kategori Layanan';
+    }
+
     protected function getHeaderActions(): array
     {
         return [

@@ -9,6 +9,11 @@ class CreateServiceCategory extends CreateRecord
 {
     protected static string $resource = ServiceCategoryResource::class;
 
+    public function getHeading(): string
+    {
+        return 'Tambah Kategori Layanan';
+    }
+
     protected function getCreateFormAction(): \Filament\Actions\Action
     {
         return parent::getCreateFormAction()->label('Simpan');

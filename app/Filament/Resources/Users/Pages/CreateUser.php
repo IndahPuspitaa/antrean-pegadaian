@@ -8,6 +8,11 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateUser extends CreateRecord
 {
     protected static string $resource = UserResource::class;
+    
+    public function getHeading(): string
+    {
+        return 'Tambah Pengguna';
+    }
 
     protected function getCreateFormAction(): \Filament\Actions\Action
     {

@@ -9,6 +9,11 @@ class CreateCounter extends CreateRecord
 {
     protected static string $resource = CounterResource::class;
 
+    public function getHeading(): string
+    {
+        return 'Tambah Loket';
+    }
+
     protected function getCreateFormAction(): \Filament\Actions\Action
     {
         return parent::getCreateFormAction()->label('Simpan');
