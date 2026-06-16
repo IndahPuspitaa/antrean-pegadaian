@@ -26,7 +26,7 @@
         <div class="flex flex-col items-center mb-8">
             <img src="{{ asset('images/logo-pegadaian.png') }}" alt="Logo Pegadaian" class="h-10 mb-3 object-contain" />
             <h1 class="text-[#5f6b66] text-[15px] font-medium tracking-wide">
-                Sistem Antrean Kasir
+                Sistem Informasi Manajemen Antrean
             </h1>
         </div>
 
@@ -71,7 +71,7 @@
     </div>
 
     <div class="mt-8 text-white/70 text-xs md:text-sm font-medium tracking-wide text-center">
-        &copy; 2026 Pegadaian - Sistem Manajemen Antrean
+        &copy; 2026 Pegadaian UPC Majenang - Sistem Informasi Manajemen Antrean
     </div>
 
     <script>
