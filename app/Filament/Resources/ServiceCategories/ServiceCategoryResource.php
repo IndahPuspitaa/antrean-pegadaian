@@ -15,12 +15,6 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-// Pastikan menggunakan import Tables\Actions agar tidak error
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\BulkActionGroup;
-use Filament\Tables\Actions\DeleteBulkAction;
-
 class ServiceCategoryResource extends Resource
 {
     protected static ?string $model = ServiceCategory::class;
@@ -76,15 +70,15 @@ class ServiceCategoryResource extends Resource
             ])
             ->filters([])
             ->actions([
-                EditAction::make()
+                \Filament\Tables\Actions\EditAction::make()
                     ->label('Ubah'),
                 
-                DeleteAction::make()
+                \Filament\Tables\Actions\DeleteAction::make()
                     ->label('Hapus'),
             ])
             ->bulkActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make()
+                \Filament\Tables\Actions\BulkActionGroup::make([
+                    \Filament\Tables\Actions\DeleteBulkAction::make()
                         ->label('Hapus Terpilih'),
                 ]),
             ]);
