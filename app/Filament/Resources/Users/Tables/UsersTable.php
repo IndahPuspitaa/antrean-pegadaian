@@ -23,7 +23,14 @@ class UsersTable
                     ->default('N/A'),
             ])
             ->actions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('')            
+                    ->iconButton()         
+                    ->color('success'),
+                DeleteAction::make()
+                    ->label('')            
+                    ->iconButton()         
+                    ->color('danger'),
             ])
             ->bulkActions([
                 BulkActionGroup::make([

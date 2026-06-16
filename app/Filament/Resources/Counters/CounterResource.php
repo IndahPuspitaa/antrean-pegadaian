@@ -57,8 +57,14 @@ class CounterResource extends Resource
             ])
             ->filters([])
             ->actions([
-                EditAction::make(),
-                DeleteAction::make(),
+                EditAction::make()
+                    ->label('')            
+                    ->iconButton()         
+                    ->color('success'),
+                DeleteAction::make()
+                    ->label('')            
+                    ->iconButton()         
+                    ->color('danger'),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
