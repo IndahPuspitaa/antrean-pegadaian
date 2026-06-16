@@ -13,6 +13,8 @@ use Filament\Forms\Components\Hidden;
 use Filament\Schemas\Components\Section;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\Layout\Split;
+use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Table;
 use Filament\Actions\EditAction;
 use Filament\Actions\DeleteAction;
@@ -62,13 +64,37 @@ class ServiceCategoryResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->contentGrid([
+                'md' => 2, 
+                'xl' => 3, 
+            ])
             ->columns([
-                TextColumn::make('name')
-                    ->label('Nama Layanan')
-                    ->searchable()
-                    ->sortable()
-                    ->weight('bold'),
-                
+                Stack::make([
+                    TextColumn::make('name')
+                        ->weight('bold')
+                        ->size(TextColumn\TextColumnSize::Large)
+                        ->searchable()
+                        ->sortable(),
+
+                    TextColumn::make('description')
+                        ->color('gray')
+                        ->lineClamp(2),
+
+                    Split::make([
+                        TextColumn::make('label_total')
+                            ->default('Total Antrean')
+                            ->color('gray')
+                            ->size(TextColumn\TextColumnSize::Small),
+                        
+                        TextColumn::make('queues_count')
+                            ->default('0') 
+                            ->weight('bold')
+                            ->color('success')
+                            ->size(TextColumn\TextColumnSize::Large)
+                            ->alignRight(),
+                    ])->extraAttributes(['class' => 'mt-6 border-t pt-4']),
+                    
+                ])->space(2), 
             ])
             ->filters([])
             ->actions([
