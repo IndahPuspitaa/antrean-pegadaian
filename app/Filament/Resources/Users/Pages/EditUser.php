@@ -12,7 +12,7 @@ class EditUser extends EditRecord
 
     public function getHeading(): string
     {
-        return 'Ubah Pengguna';
+        return 'Ubah User';
     }
 
     protected function getHeaderActions(): array
