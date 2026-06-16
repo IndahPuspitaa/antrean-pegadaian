@@ -16,4 +16,9 @@ class ListUsers extends ListRecords
             \Filament\Actions\CreateAction::make()->label('Tambah User Baru'),
         ];
     }
+
+    public function getBreadcrumbs(): array
+    {
+        return [];
+    }
 }

@@ -16,4 +16,9 @@ class ListCounters extends ListRecords
             \Filament\Actions\CreateAction::make()->label('Tambah Loket Baru'),
         ];
     }
+
+    public function getBreadcrumbs(): array
+    {
+        return [];
+    }
 }
