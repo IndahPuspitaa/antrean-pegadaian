@@ -23,18 +23,18 @@ class UsersTable
                     ->default('N/A'),
             ])
             ->actions([
-                EditAction::make()
+                \Filament\Actions\EditAction::make()
                     ->label('')            
                     ->iconButton()         
                     ->color('success'),
-                DeleteAction::make()
+                \Filament\Actions\DeleteAction::make()
                     ->label('')            
                     ->iconButton()         
                     ->color('danger'),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    \Filament\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
