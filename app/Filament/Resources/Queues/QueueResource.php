@@ -51,7 +51,7 @@ class QueueResource extends Resource
                     ->weight('bold'),
 
                 TextColumn::make('customer_name')
-                    ->label('Nama/Kode')
+                    ->label('Nama')
                     ->searchable()
                     ->default('—'),
 

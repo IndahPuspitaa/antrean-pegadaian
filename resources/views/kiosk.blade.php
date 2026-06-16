@@ -118,7 +118,7 @@
                            placeholder="Masukkan nama Anda" 
                            class="w-full px-4 py-3.5 bg-[#f7f9f8] border border-gray-200 rounded-xl text-base font-medium text-[#004e44] focus:outline-none focus:ring-2 focus:ring-[#00ab4e] focus:bg-white placeholder-gray-400"
                            autocomplete="off">
-                    <p class="text-xs text-gray-400 mt-3 leading-relaxed">Anda dapat mengosongkan nama jika ingin menggunakan kode nasabah</p>
+                    <p class="text-xs text-gray-400 mt-3 leading-relaxed">Anda dapat mengosongkan nama nasabah</p>
                 </div>
 
                 <div class="bg-white rounded-[24px] shadow-[0px_8px_32px_rgba(0,0,0,0.04)] border border-gray-100/50 p-6 w-full mb-5 text-left">
