@@ -23,9 +23,4 @@ class CreateUser extends CreateRecord
     {
         return parent::getCancelFormAction()->label('Batal');
     }
-
-    public function getBreadcrumbs(): array
-    {
-        return [];
-    }
 }
