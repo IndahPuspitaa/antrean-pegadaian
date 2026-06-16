@@ -14,10 +14,10 @@ class UsersTable
     {
         return $table
             ->columns([
-                TextColumn::make('name')->searchable(),
-                TextColumn::make('username')->searchable(),
-                TextColumn::make('email')->searchable(),
-                TextColumn::make('role')->badge(),
+                TextColumn::make('name')->searchable()->label('Nama'),
+                TextColumn::make('username')->searchable()->label('Username'),
+                TextColumn::make('email')->searchable()->label('Email'),
+                TextColumn::make('role')->badge()->label('Role'),
                 TextColumn::make('counter.name')
                     ->label('Loket')
                     ->default('N/A'),
