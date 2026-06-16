@@ -132,7 +132,7 @@
     {{-- CTA --}}
     <div class="db-cta">
         <div>
-            <div class="db-cta-title">Siap melayani pelanggan?</div>
+            <div class="db-cta-title">Siap melayani nasabah?</div>
             <div class="db-cta-sub">Panggil antrean berikutnya dari halaman Panggil Antrean</div>
         </div>
         <a href="/admin/panggil-antrean" class="db-cta-btn">Mulai Panggil</a>

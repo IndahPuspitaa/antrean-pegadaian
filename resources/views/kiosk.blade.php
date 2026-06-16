@@ -99,7 +99,7 @@
                     <span class="iconify text-3xl" data-icon="solar:user-bold"></span>
                 </div>
                 
-                <h2 class="font-bold text-[#004e44] text-3xl tracking-tight mb-2">Data Pelanggan</h2>
+                <h2 class="font-bold text-[#004e44] text-3xl tracking-tight mb-2">Data Nasabah</h2>
                 
                 <div class="px-5 py-1.5 bg-white rounded-full shadow-[0px_2px_8px_rgba(0,0,0,0.02)] border border-gray-100 text-sm font-medium text-[#004e44] mb-5">
                     <span id="target-service-name" class="font-bold">Layanan</span>
@@ -118,7 +118,7 @@
                            placeholder="Masukkan nama Anda" 
                            class="w-full px-4 py-3.5 bg-[#f7f9f8] border border-gray-200 rounded-xl text-base font-medium text-[#004e44] focus:outline-none focus:ring-2 focus:ring-[#00ab4e] focus:bg-white placeholder-gray-400"
                            autocomplete="off">
-                    <p class="text-xs text-gray-400 mt-3 leading-relaxed">Anda dapat mengosongkan nama jika ingin menggunakan kode pelanggan</p>
+                    <p class="text-xs text-gray-400 mt-3 leading-relaxed">Anda dapat mengosongkan nama jika ingin menggunakan kode nasabah</p>
                 </div>
 
                 <div class="bg-white rounded-[24px] shadow-[0px_8px_32px_rgba(0,0,0,0.04)] border border-gray-100/50 p-6 w-full mb-5 text-left">

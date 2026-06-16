@@ -71,30 +71,17 @@ class ServiceCategoryResource extends Resource
             ->columns([
                 Stack::make([
                     TextColumn::make('name')
+                        ->label('Nama Layanan')
                         ->weight('bold')
-                        ->size(TextColumn\TextColumnSize::Large)
+                        ->size('lg')
                         ->searchable()
                         ->sortable(),
 
                     TextColumn::make('description')
+                        ->label('Deskripsi')
                         ->color('gray')
                         ->lineClamp(2),
-
-                    Split::make([
-                        TextColumn::make('label_total')
-                            ->default('Total Antrean')
-                            ->color('gray')
-                            ->size(TextColumn\TextColumnSize::Small),
-                        
-                        TextColumn::make('queues_count')
-                            ->default('0') 
-                            ->weight('bold')
-                            ->color('success')
-                            ->size(TextColumn\TextColumnSize::Large)
-                            ->alignRight(),
-                    ])->extraAttributes(['class' => 'mt-6 border-t pt-4']),
-                    
-                ])->space(2), 
+                ])->space(2),
             ])
             ->filters([])
             ->actions([
