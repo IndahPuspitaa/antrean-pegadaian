@@ -26,4 +26,9 @@ class EditServiceCategory extends EditRecord
     {
         return parent::getCancelFormAction()->label('Batal');
     }
+
+    public function getBreadcrumbs(): array
+    {
+        return [];
+    }
 }
