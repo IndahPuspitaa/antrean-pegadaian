@@ -14,6 +14,10 @@ use Filament\Schemas\Components\Section;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
 
 class ServiceCategoryResource extends Resource
 {
@@ -70,15 +74,15 @@ class ServiceCategoryResource extends Resource
             ])
             ->filters([])
             ->actions([
-                \Filament\Tables\Actions\EditAction::make()
+                EditAction::make()
                     ->label('Ubah'),
                 
-                \Filament\Tables\Actions\DeleteAction::make()
+                DeleteAction::make()
                     ->label('Hapus'),
             ])
             ->bulkActions([
-                \Filament\Tables\Actions\BulkActionGroup::make([
-                    \Filament\Tables\Actions\DeleteBulkAction::make()
+                BulkActionGroup::make([
+                    DeleteBulkAction::make()
                         ->label('Hapus Terpilih'),
                 ]),
             ]);
