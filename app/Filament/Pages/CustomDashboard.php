@@ -12,9 +12,9 @@ class CustomDashboard extends BaseDashboard
 {
     protected string $view = 'filament.pages.custom-dashboard';
 
-    public function getHeading(): string | Htmlable
+    public function getSubheading(): string | Htmlable | null
     {
-        return '';
+        return 'Ringkasan antrean kasir hari ini';
     }
 
     protected function getViewData(): array
