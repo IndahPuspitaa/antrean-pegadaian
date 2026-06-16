@@ -39,11 +39,6 @@
 </style>
 
 <div class="db-wrap">
-    <div class="db-header">
-        <h1 class="db-title">Dashboard</h1>
-        <p class="db-subtitle">Ringkasan antrean kasir hari ini</p>
-    </div>
-    
     {{-- Stats --}}
 <div class="db-stats">
     <div class="db-card">
