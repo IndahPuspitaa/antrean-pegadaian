@@ -13,14 +13,13 @@ use Filament\Forms\Components\Hidden;
 use Filament\Schemas\Components\Section;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\Layout\Split;
-use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Table;
-use Filament\Actions\EditAction;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
 
+// Pastikan menggunakan import Tables\Actions agar tidak error
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
 
 class ServiceCategoryResource extends Resource
 {
@@ -56,7 +55,6 @@ class ServiceCategoryResource extends Resource
 
                         Hidden::make('estimated_time')
                             ->default(5),
-
                     ]),
             ]);
     }
@@ -64,37 +62,30 @@ class ServiceCategoryResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->contentGrid([
-                'md' => 2, 
-                'xl' => 3, 
-            ])
             ->columns([
-                Stack::make([
-                    TextColumn::make('name')
-                        ->label('Nama Layanan')
-                        ->weight('bold')
-                        ->size('lg')
-                        ->searchable()
-                        ->sortable(),
+                TextColumn::make('name')
+                    ->label('Nama Layanan')
+                    ->searchable()
+                    ->sortable()
+                    ->weight('bold'),
 
-                    TextColumn::make('description')
-                        ->label('Deskripsi')
-                        ->color('gray')
-                        ->lineClamp(2),
-                ])->space(2),
+                TextColumn::make('description')
+                    ->label('Deskripsi')
+                    ->searchable()
+                    ->limit(50), 
             ])
             ->filters([])
             ->actions([
-            EditAction::make()
-                ->label('Ubah'),
+                EditAction::make()
+                    ->label('Ubah'),
                 
-            DeleteAction::make()
-                ->label('Hapus'),
+                DeleteAction::make()
+                    ->label('Hapus'),
             ])
             ->bulkActions([
-            BulkActionGroup::make([
-                DeleteBulkAction::make()
-                    ->label('Hapus Terpilih'),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make()
+                        ->label('Hapus Terpilih'),
                 ]),
             ]);
     }
