@@ -48,7 +48,5 @@ aside.fi-sidebar .fi-sidebar-group-label {
 .fi-sidebar-header .custom-logo-text h1 { color: #ffffff !important; }
 .fi-sidebar-header .custom-logo-text span { color: #d1fae5 !important; }
 
-@media (max-width: 768px) {
-    .fi-topbar .custom-logo-text { display: none !important; }
-}
+
 
