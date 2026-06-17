@@ -2,6 +2,11 @@ aside.fi-sidebar, aside.fi-sidebar header {
     background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
 }
 
+.fi-sidebar-header {
+    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+    border-bottom: none !important;
+}
+
 aside.fi-sidebar .fi-sidebar-item-label,
 aside.fi-sidebar .fi-icon {
     color: #ffffff !important;
