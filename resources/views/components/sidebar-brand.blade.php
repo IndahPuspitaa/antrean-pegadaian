@@ -21,9 +21,6 @@
             background-color: transparent; 
             padding: 0.8rem 0;
         }
-        .custom-logo-text {
-            display: none; 
-        }
     }
 </style>
 
