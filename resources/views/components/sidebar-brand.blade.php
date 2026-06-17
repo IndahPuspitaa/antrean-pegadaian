@@ -1,12 +1,36 @@
-<div class="flex items-center gap-2" style="padding: 0.5rem 0; background: transparent !important;">
-    <img src="{{ asset('images/logo-pegadaian.png') }}" alt="Logo" style="height: 35px; width: auto; object-fit: contain;">
-    
-    <div class="custom-logo-text flex flex-col text-left">
-        <h1 style="font-size: 0.95rem; font-weight: 700; color: #ffffff; margin: 0; line-height: 1.2;">
-            Sistem Antrean
-        </h1>
-        <span style="font-size: 0.75rem; color: #d1fae5; margin: 0; line-height: 1.2;">
-            Admin Panel
-        </span>
+<style>
+    .custom-logo-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        z-index: 100;
+        margin: 0;
+        background-color: #008236; 
+        padding: 1.25rem 1rem; 
+        width: 256px; 
+    }
+
+   
+    @media (max-width: 768px) {
+        .custom-logo-container {
+            left: 3.5rem; 
+            width: auto;
+            background-color: transparent; 
+            padding: 0.8rem 0;
+        }
+        .custom-logo-text {
+            display: none; 
+        }
+    }
+</style>
+
+<div class="custom-logo-container">
+    <img src="{{ asset('images/logo-pegadaian.png') }}" alt="Logo" style="height: 35px; width: auto;">
+    <div class="custom-logo-text" style="display: flex; flex-direction: column;">
+        <h1 style="font-size: 0.95rem; font-weight: 700; color: #ffffff; margin: 0;">Sistem Antrean</h1>
+        <span style="font-size: 0.75rem; color: #d1fae5; margin: 0;">Admin Panel</span>
     </div>
 </div>
