@@ -42,10 +42,6 @@ aside.fi-sidebar .fi-sidebar-group-label {
     letter-spacing: 0.08em !important;
 }
 
-.fi-topbar .custom-logo-text {
-    display: none !important;
-}
-
 @media (max-width: 768px) {
     .custom-topbar-logo {
         width: auto; 
