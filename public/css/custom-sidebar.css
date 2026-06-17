@@ -1,28 +1,52 @@
-/* Gradasi Hijau Sidebar */
-aside.fi-sidebar, aside.fi-sidebar header { 
+aside.fi-sidebar, aside.fi-sidebar header {
     background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
 }
 
-/* Memastikan area header sidebar transparan agar mengikuti gradasi */
-.fi-sidebar-header {
-    background: transparent !important;
-    padding-bottom: 15px !important;
+aside.fi-sidebar .fi-sidebar-item-label,
+aside.fi-sidebar .fi-icon {
+    color: #ffffff !important;
 }
 
-/* Warna Item Sidebar */
-aside.fi-sidebar .fi-sidebar-item-label, aside.fi-sidebar .fi-icon { color: #ffffff !important; }
-
-/* Warna Active */
-aside.fi-sidebar li.fi-sidebar-item.fi-active > a { 
-    background-color: #ffffff !important; 
-    border-radius: 0.5rem !important; 
+aside.fi-sidebar li.fi-sidebar-item > a:hover {
+    background-color: rgba(1, 102, 48, 0.8) !important;
 }
+
+aside.fi-sidebar li.fi-sidebar-item.fi-active > a {
+    background-color: #ffffff !important;
+    border-radius: 0.5rem !important;
+}
+
 aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-sidebar-item-label,
-aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon { color: #008236 !important; }
+aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
+    color: #008236 !important; 
+}
+.fi-sidebar {
+    padding-top: 20px !important; 
+}
 
-/* Label Master Data/Operasional */
+.fi-sidebar-nav {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.fi-sidebar-group-button {
+    justify-content: flex-start !important;
+    padding-right: 0 !important;
+}
+
 aside.fi-sidebar .fi-sidebar-group-label {
     color: #d1fae5 !important; 
     font-size: 0.65rem !important; 
+    font-weight: 400 !important; 
     text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
 }
+
+.fi-topbar .custom-logo-text h1 { color: #008236 !important; }
+.fi-topbar .custom-logo-text span { color: #16a34a !important; }
+
+.fi-sidebar-header .custom-logo-text h1 { color: #ffffff !important; }
+.fi-sidebar-header .custom-logo-text span { color: #d1fae5 !important; }
+
+
+
