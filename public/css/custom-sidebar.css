@@ -46,7 +46,17 @@ aside.fi-sidebar .fi-sidebar-group-label {
     display: none !important;
 }
 
-.fi-sidebar-header .custom-logo-text {
-    display: flex !important;
-    color: #ffffff !important;
+@media (max-width: 768px) {
+    .custom-topbar-logo {
+        width: auto; 
+        left: 3.5rem; 
+        background-color: transparent; 
+        padding: 0.75rem 0;
+    }
+    .custom-topbar-logo .logo-text-wrapper { display: none; }
+    .queue-main-grid { grid-template-columns: 1fr !important; }
+    .action-buttons-group { flex-wrap: wrap; }
+    .db-stats { grid-template-columns: repeat(2, 1fr); }
+    .db-section { grid-template-columns: 1fr; }
+    .db-cta { flex-direction: column; align-items: flex-start; }
 }
