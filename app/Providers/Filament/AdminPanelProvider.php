@@ -33,6 +33,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->font('Inter')
             ->brandName('') 
+            // Di dalam fungsi panel(...)
+->brandLogo(fn () => view('components.sidebar-brand'))
+->brandLogoHeight('35px')
             ->sidebarWidth('16rem')
             ->navigationGroups([
                 NavigationGroup::make('Master Data')
