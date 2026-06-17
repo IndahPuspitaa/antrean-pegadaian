@@ -1,8 +1,20 @@
 <style>
-    .fi-sidebar-header .fi-logo {
+    /* 1. Sembunyikan logo bawaan Filament */
+    .fi-sidebar-header .fi-logo,
+    .fi-topbar .fi-logo {
         display: none !important;
     }
 
+    /* 2. INI KUNCINYA: Paksa kotak luar (parent) milik Filament jadi hijau gradasi */
+    .fi-sidebar-header, 
+    .fi-topbar-start {
+        background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+        margin: 0 !important;
+        /* Hapus border bawah jika ada */
+        border-bottom: none !important; 
+    }
+
+    /* 3. Pengaturan wadah logo kamu */
     .custom-logo-container {
         display: flex;
         align-items: center;
@@ -12,24 +24,27 @@
         background-color: transparent;
     }
 
+    /* 4. Paksa teks judul jadi PUTIH */
     .custom-logo-text h1 {
         font-size: 0.95rem;
         font-weight: 700;
-        color: #ffffff;
+        color: #ffffff !important; 
         margin: 0;
         line-height: 1.2;
     }
 
+    /* 5. Paksa teks Admin Panel jadi HIJAU MUDA */
     .custom-logo-text span {
         font-size: 0.72rem;
-        color: #d1fae5 ; 
+        color: #d1fae5 !important; 
         margin: 0;
         line-height: 1.2;
     }
 
+    /* 6. Responsif untuk HP */
     @media (max-width: 768px) {
         .custom-logo-container {
-            padding: 0.8rem 0;
+            padding: 0.8rem 1rem;
         }
     }
 </style>
