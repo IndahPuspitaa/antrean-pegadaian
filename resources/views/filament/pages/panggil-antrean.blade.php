@@ -27,7 +27,7 @@
     </div>
 
     {{-- Main Content --}}
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
 
         {{-- Antrean Menunggu --}}
         <div style="background:white;border:1px solid #e5e7eb;border-radius:12px;padding:20px">

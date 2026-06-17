@@ -42,22 +42,11 @@ aside.fi-sidebar .fi-sidebar-group-label {
     letter-spacing: 0.08em !important;
 }
 
-.custom-topbar-logo {
-    background-color: #008236; padding: 1.25rem 1rem; width: 256px; position: absolute; 
-    top: 0; left: 0; display: flex; align-items: center; gap: 0.75rem; z-index: 100; margin: 0;
+.fi-topbar .custom-logo-text {
+    display: none !important;
 }
 
-@media (max-width: 768px) {
-    .custom-topbar-logo {
-        width: auto; 
-        left: 3.5rem; 
-        background-color: transparent; 
-        padding: 0.75rem 0;
-    }
-    .custom-topbar-logo .logo-text-wrapper { display: none; }
-    .queue-main-grid { grid-template-columns: 1fr !important; }
-    .action-buttons-group { flex-wrap: wrap; }
-    .db-stats { grid-template-columns: repeat(2, 1fr); }
-    .db-section { grid-template-columns: 1fr; }
-    .db-cta { flex-direction: column; align-items: flex-start; }
+.fi-sidebar-header .custom-logo-text {
+    display: flex !important;
+    color: #ffffff !important;
 }
