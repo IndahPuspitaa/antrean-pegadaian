@@ -1,12 +1,16 @@
-aside.fi-sidebar, aside.fi-sidebar header {
-    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
-}
-
+/* =========================================
+   1. PENGATURAN BACKGROUND SIDEBAR
+   ========================================= */
+aside.fi-sidebar, 
+aside.fi-sidebar header,
 .fi-sidebar-header {
-    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
     border-bottom: none !important;
 }
 
+/* =========================================
+   2. PENGATURAN ITEM MENU SIDEBAR
+   ========================================= */
 aside.fi-sidebar .fi-sidebar-item-label,
 aside.fi-sidebar .fi-icon {
     color: #ffffff !important;
@@ -25,6 +29,10 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-sidebar-item-label,
 aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
     color: #008236 !important; 
 }
+
+/* =========================================
+   3. SPASI & PADDING SIDEBAR
+   ========================================= */
 .fi-sidebar {
     padding-top: 20px !important; 
 }
@@ -47,11 +55,37 @@ aside.fi-sidebar .fi-sidebar-group-label {
     letter-spacing: 0.08em !important;
 }
 
-.fi-topbar .custom-logo-text h1 { color: #008236 !important; }
-.fi-topbar .custom-logo-text span { color: #16a34a !important; }
+/* =========================================
+   4. PENGATURAN WARNA TEKS LOGO
+   ========================================= */
+/* Karena topbar dan sidebar sekarang sama-sama hijau, teksnya kita buat putih semua */
+.fi-topbar .custom-logo-text h1, 
+.fi-sidebar-header .custom-logo-text h1 { 
+    color: #ffffff !important; 
+}
 
-.fi-sidebar-header .custom-logo-text h1 { color: #ffffff !important; }
-.fi-sidebar-header .custom-logo-text span { color: #d1fae5 !important; }
+.fi-topbar .custom-logo-text span, 
+.fi-sidebar-header .custom-logo-text span { 
+    color: #d1fae5 !important; 
+}
 
+/* =========================================
+   5. FIX: AREA BRAND DI TOPBAR (MOBILE)
+   ========================================= */
+.fi-topbar {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
 
+.fi-topbar-start {
+    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+    padding: 0 1rem !important;
+}
 
+/* Penyesuaian class Filament v5 agar background rapi */
+[class*="fi-layout-sidebar"] > div:first-child,
+.fi-sidebar > header,
+nav[class*="fi-topbar"] {
+    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+}
