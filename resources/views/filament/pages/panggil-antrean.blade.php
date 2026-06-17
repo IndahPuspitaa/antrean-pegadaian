@@ -28,7 +28,7 @@
 
     {{-- Main Content --}}
     <div style="overflow-x: auto; padding-bottom: 12px; width: 100%;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; min-width: 600px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; min-width: 750px;">
 
         {{-- Antrean Menunggu --}}
         <div style="background:white;border:1px solid #e5e7eb;border-radius:12px;padding:20px">
