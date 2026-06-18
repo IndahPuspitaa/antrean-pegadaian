@@ -2,14 +2,34 @@ aside.fi-sidebar, aside.fi-sidebar header {
     background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
 }
 
-.fi-sidebar-header {
-    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
-    border-bottom: none !important;
+nav.fi-topbar {
+    background: #ffffff !important;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05) !important;
+    position: relative;
 }
 
-.fi-topbar {
-    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
-    box-shadow: none !important;
+nav.fi-topbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 256px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%);
+    z-index: 0;
+}
+
+/* ✅ Garis pemisah tipis seperti referensi */
+.fi-sidebar-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    position: relative;
+    z-index: 1;
+}
+
+.custom-logo-container {
+    position: relative;
+    z-index: 1;
+    width: 256px !important;
 }
 
 aside.fi-sidebar .fi-sidebar-item-label,
