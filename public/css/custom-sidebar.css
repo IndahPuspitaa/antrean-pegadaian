@@ -1,41 +1,40 @@
-aside.fi-sidebar, aside.fi-sidebar header {
+aside.fi-sidebar {
     background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
 }
 
 .fi-sidebar-header {
+    background: transparent !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
-nav.fi-topbar {
-    background: #ffffff !important;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05) !important;
+.fi-logo, .fi-topbar-start, .custom-logo-container {
     position: relative !important;
+    z-index: 50 !important;
 }
 
-nav.fi-topbar::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: var(--sidebar-width, 256px);
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%);
-    z-index: 0;
-    pointer-events: none;
-}
+@media (min-width: 1025px) {
+    nav.fi-topbar {
+        background: #ffffff !important; 
+        position: relative !important;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05) !important;
+    }
 
-.custom-logo-container {
-    position: relative;
-    z-index: 10;
-}
+    nav.fi-topbar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 256px; 
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+        z-index: 0;
+        pointer-events: none;
+    }
 
-.fi-sidebar-close-button,
-button[x-on\:click*="isSidebarOpen"],
-[x-on\:click*="sidebarOpen"],
-.fi-topbar button:first-of-type {
-    position: relative !important;
-    z-index: 10 !important;
-    color: #1f2937 !important;
+    .custom-brand-title, .custom-logo-text h1 { color: #ffffff !important; }
+    .custom-brand-subtitle, .custom-logo-text span { color: #d1fae5 !important; }
+
+    .fi-topbar-start button { color: #ffffff !important; }
 }
 
 @media (max-width: 1024px) {
@@ -44,8 +43,14 @@ button[x-on\:click*="isSidebarOpen"],
     }
 
     nav.fi-topbar {
-        background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+        background: #ffffff !important;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05) !important;
     }
+
+    .custom-brand-title, .custom-logo-text h1 { color: #008236 !important; }
+    .custom-brand-subtitle, .custom-logo-text span { color: #16a34a !important; }
+
+    .fi-topbar button { color: #1f2937 !important; }
 }
 
 aside.fi-sidebar .fi-sidebar-item-label,
@@ -72,14 +77,8 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
     color: #008236 !important;
 }
 
-.fi-sidebar {
-    padding-top: 20px !important;
-}
-
-.fi-sidebar-nav {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
+.fi-sidebar { padding-top: 20px !important; }
+.fi-sidebar-nav { margin-top: 0 !important; padding-top: 0 !important; }
 
 .fi-sidebar-group-button svg,
 .fi-sidebar-group-collapse-button svg,
