@@ -1,11 +1,15 @@
 aside.fi-sidebar, aside.fi-sidebar header {
-    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
+    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+}
+
+.fi-sidebar-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
 nav.fi-topbar {
     background: #ffffff !important;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05) !important;
-    position: relative;
+    position: relative !important;
 }
 
 nav.fi-topbar::before {
@@ -13,23 +17,35 @@ nav.fi-topbar::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 256px;
+    width: var(--sidebar-width, 256px);
     height: 100%;
     background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%);
     z-index: 0;
-}
-
-/* ✅ Garis pemisah tipis seperti referensi */
-.fi-sidebar-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
-    position: relative;
-    z-index: 1;
+    pointer-events: none;
 }
 
 .custom-logo-container {
     position: relative;
-    z-index: 1;
-    width: 256px !important;
+    z-index: 10;
+}
+
+.fi-sidebar-close-button,
+button[x-on\:click*="isSidebarOpen"],
+[x-on\:click*="sidebarOpen"],
+.fi-topbar button:first-of-type {
+    position: relative !important;
+    z-index: 10 !important;
+    color: #1f2937 !important;
+}
+
+@media (max-width: 1024px) {
+    nav.fi-topbar::before {
+        display: none !important;
+    }
+
+    nav.fi-topbar {
+        background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+    }
 }
 
 aside.fi-sidebar .fi-sidebar-item-label,
@@ -53,11 +69,11 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a {
 
 aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-sidebar-item-label,
 aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
-    color: #008236 !important; 
+    color: #008236 !important;
 }
 
 .fi-sidebar {
-    padding-top: 20px !important; 
+    padding-top: 20px !important;
 }
 
 .fi-sidebar-nav {
