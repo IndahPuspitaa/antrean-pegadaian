@@ -33,6 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->font('Inter')
             ->brandName('') 
+            ->favicon(asset('images/favicon.png'))
             ->sidebarWidth('16rem')
             ->navigationGroups([
                 NavigationGroup::make('Master Data')

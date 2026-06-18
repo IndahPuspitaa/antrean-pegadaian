@@ -1,6 +1,3 @@
-/* =========================================
-   1. TOPBAR KEMBALI PUTIH BERSIH
-   ========================================= */
 .fi-topbar {
     background-color: #ffffff !important;
 }
@@ -12,38 +9,25 @@
     width: auto !important;
 }
 
-/* =========================================
-   2. SIDEBAR FULL HIJAU & HEADER TRANSPARAN
-   ========================================= */
 aside.fi-sidebar {
     background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
 }
 
-/* Biarkan header tembus pandang agar warna gradasi di belakangnya terlihat sempurna */
 .fi-sidebar-header {
     background: transparent !important;
     border-bottom: none !important;
 }
 
-/* Hilangkan background putih bawaan logo Filament */
 .fi-logo {
     background: transparent !important;
 }
 
-/* =========================================
-   3. PENGATURAN WARNA TEKS LOGO (OTOMATIS)
-   ========================================= */
-/* Di Desktop (Latar Hijau), Teks Putih & Hijau Muda */
 .fi-sidebar-header .custom-brand-title { color: #ffffff !important; }
 .fi-sidebar-header .custom-brand-subtitle { color: #d1fae5 !important; }
 
-/* Di HP (Latar Putih), Teks Hijau Gelap & Hijau Standar */
 .fi-topbar .custom-brand-title { color: #008236 !important; }
 .fi-topbar .custom-brand-subtitle { color: #16a34a !important; }
 
-/* =========================================
-   4. WARNA ITEM MENU SIDEBAR
-   ========================================= */
 aside.fi-sidebar .fi-sidebar-item-label,
 aside.fi-sidebar .fi-icon {
     color: #ffffff !important;
