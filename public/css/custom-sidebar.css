@@ -1,44 +1,48 @@
 /* =========================================
-   1. GRADASI SIDEBAR YANG NYAMBUNG MULUS
+   1. TOPBAR KEMBALI PUTIH BERSIH
    ========================================= */
-/* Berikan gradasi HANYA pada wadah utama sidebar */
+.fi-topbar {
+    background-color: #ffffff !important;
+}
+
+.fi-topbar-start {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+}
+
+/* =========================================
+   2. SIDEBAR FULL HIJAU & HEADER TRANSPARAN
+   ========================================= */
 aside.fi-sidebar {
     background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
 }
 
-/* Area logo di sidebar dibuat tembus pandang agar menyatu dengan gradasi di belakangnya */
-aside.fi-sidebar header,
+/* Biarkan header tembus pandang agar warna gradasi di belakangnya terlihat sempurna */
 .fi-sidebar-header {
     background: transparent !important;
     border-bottom: none !important;
 }
 
-/* =========================================
-   2. KEMBALIKAN TOPBAR AGAR TIDAK KELEWAT BATAS
-   ========================================= */
-/* Topbar dikembalikan ke warna putih bawaannya */
-nav.fi-topbar {
-    background-color: #ffffff !important; 
-    border-bottom: 1px solid #e5e7eb !important;
-}
-
-.fi-topbar-start {
+/* Hilangkan background putih bawaan logo Filament */
+.fi-logo {
     background: transparent !important;
 }
 
 /* =========================================
-   3. PENGATURAN WARNA TEKS LOGO
+   3. PENGATURAN WARNA TEKS LOGO (OTOMATIS)
    ========================================= */
-/* Di Topbar (Latar Putih), teks warna Hijau */
-.fi-topbar .custom-logo-text h1 { color: #008236 !important; }
-.fi-topbar .custom-logo-text span { color: #16a34a !important; }
+/* Di Desktop (Latar Hijau), Teks Putih & Hijau Muda */
+.fi-sidebar-header .custom-brand-title { color: #ffffff !important; }
+.fi-sidebar-header .custom-brand-subtitle { color: #d1fae5 !important; }
 
-/* Di Sidebar (Latar Hijau), teks warna Putih & Hijau Muda */
-.fi-sidebar-header .custom-logo-text h1 { color: #ffffff !important; }
-.fi-sidebar-header .custom-logo-text span { color: #d1fae5 !important; }
+/* Di HP (Latar Putih), Teks Hijau Gelap & Hijau Standar */
+.fi-topbar .custom-brand-title { color: #008236 !important; }
+.fi-topbar .custom-brand-subtitle { color: #16a34a !important; }
 
 /* =========================================
-   4. PENGATURAN ITEM MENU SIDEBAR
+   4. WARNA ITEM MENU SIDEBAR
    ========================================= */
 aside.fi-sidebar .fi-sidebar-item-label,
 aside.fi-sidebar .fi-icon {
@@ -59,15 +63,8 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
     color: #008236 !important; 
 }
 
-/* Label Master Data */
 aside.fi-sidebar .fi-sidebar-group-label {
     color: #d1fae5 !important; 
     font-size: 0.65rem !important; 
-    font-weight: 400 !important; 
     text-transform: uppercase !important;
 }
-
-/* Spasi */
-.fi-sidebar { padding-top: 20px !important; }
-.fi-sidebar-nav { margin-top: 0 !important; padding-top: 0 !important; }
-.fi-sidebar-group-button { justify-content: flex-start !important; padding-right: 0 !important; }
