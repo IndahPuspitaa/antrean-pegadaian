@@ -1,36 +1,25 @@
-.fi-topbar {
-    background-color: #ffffff !important;
-}
-
-.fi-topbar-start {
-    background: transparent !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: auto !important;
-}
-
-aside.fi-sidebar {
+aside.fi-sidebar, aside.fi-sidebar header {
     background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important; 
 }
 
 .fi-sidebar-header {
-    background: transparent !important;
+    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
     border-bottom: none !important;
 }
 
-.fi-logo {
-    background: transparent !important;
+.fi-topbar {
+    background: linear-gradient(180deg, rgba(0, 130, 54, 1) 0%, rgba(1, 102, 48, 1) 100%) !important;
+    box-shadow: none !important;
 }
-
-.fi-sidebar-header .custom-brand-title { color: #ffffff !important; }
-.fi-sidebar-header .custom-brand-subtitle { color: #d1fae5 !important; }
-
-.fi-topbar .custom-brand-title { color: #008236 !important; }
-.fi-topbar .custom-brand-subtitle { color: #16a34a !important; }
 
 aside.fi-sidebar .fi-sidebar-item-label,
 aside.fi-sidebar .fi-icon {
     color: #ffffff !important;
+}
+
+aside.fi-sidebar .fi-sidebar-item-label {
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
 }
 
 aside.fi-sidebar li.fi-sidebar-item > a:hover {
@@ -47,8 +36,30 @@ aside.fi-sidebar li.fi-sidebar-item.fi-active > a .fi-icon {
     color: #008236 !important; 
 }
 
-aside.fi-sidebar .fi-sidebar-group-label {
-    color: #d1fae5 !important; 
-    font-size: 0.65rem !important; 
-    text-transform: uppercase !important;
+.fi-sidebar {
+    padding-top: 20px !important; 
+}
+
+.fi-sidebar-nav {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.fi-sidebar-group-button svg,
+.fi-sidebar-group-collapse-button svg,
+button[x-on\:click*="toggleCollapsed"] svg {
+    display: none !important;
+}
+
+.fi-sidebar-group-label {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.fi-sidebar-group-button {
+    justify-content: flex-start !important;
+    padding-right: 0 !important;
 }
