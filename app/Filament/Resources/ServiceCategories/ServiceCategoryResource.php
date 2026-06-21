@@ -67,26 +67,28 @@ class ServiceCategoryResource extends Resource
                 'md' => 2,
                 'xl' => 3,
             ])
+            ->extraAttributes(['class' => 'service-category-cards'])
             ->recordActionsPosition(RecordActionsPosition::BeforeColumns)
             ->columns([
                 Stack::make([
                     TextColumn::make('name')
                         ->label('Nama Layanan')
                         ->weight('bold')
-                        ->size('md')
-                        ->searchable(),
+                        ->size('md'),
 
                     TextColumn::make('description')
                         ->label('Deskripsi')
                         ->color('gray')
                         ->size('sm')
-                        ->limit(60)
-                        ->searchable(),
+                        ->limit(60),
 
                     TextColumn::make('divider')
                         ->label('')
-                        ->state('')
-                        ->extraAttributes(['class' => 'border-t border-gray-200 dark:border-white/10 !mt-2 !pt-2']),
+                        ->state('-')
+                        ->color('transparent')
+                        ->extraAttributes([
+                            'class' => 'border-t border-gray-200 dark:border-white/10 !mt-2 !pt-2 !leading-none select-none',
+                        ]),
 
                     Split::make([
                         TextColumn::make('waiting_today_label')

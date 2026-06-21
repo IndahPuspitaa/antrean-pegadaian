@@ -89,3 +89,15 @@ button[x-on\:click*="toggleCollapsed"] svg {
     padding-right: 0 !important;
     min-height: auto !important;
 }
+
+/* === Service Category Cards: posisi tombol Edit/Hapus di pojok kanan atas === */
+.service-category-cards .fi-ta-record {
+    position: relative;
+}
+
+.service-category-cards .fi-ta-actions {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
