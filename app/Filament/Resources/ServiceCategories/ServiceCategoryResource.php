@@ -70,34 +70,34 @@ class ServiceCategoryResource extends Resource
             ->extraAttributes(['class' => 'service-category-cards'])
             ->recordActionsPosition(RecordActionsPosition::BeforeColumns)
             ->columns([
-                Stack::make([
-                    TextColumn::make('name')
-                        ->label('Nama Layanan')
-                        ->weight('bold')
-                        ->size('md'),
-
-                    TextColumn::make('description')
-                        ->label('Deskripsi')
-                        ->color('gray')
-                        ->size('sm')
-                        ->limit(60),
-
-                    Split::make([
-                        TextColumn::make('waiting_today_label')
-                            ->label('')
-                            ->state('Total Antrean')
-                            ->color('gray')
-                            ->size('sm'),
-
-                        TextColumn::make('waiting_today')
-                            ->label('')
-                            ->state(fn (ServiceCategory $record) => $record->waitingToday())
+                    Stack::make([
+                        TextColumn::make('name')
+                            ->label('Nama Layanan')
                             ->weight('bold')
-                            ->size('lg')
-                            ->alignEnd(),
-                    ])->extraAttributes(['class' => 'border-t border-gray-200 dark:border-white/10 !mt-2 !pt-3']),
+                            ->size('md'),
+
+                        TextColumn::make('description')
+                            ->label('Deskripsi')
+                            ->color('gray')
+                            ->size('sm')
+                            ->limit(60),
+
+                        Split::make([
+                            TextColumn::make('waiting_today_label')
+                                ->label('')
+                                ->state('Total Antrean')
+                                ->color('gray')
+                                ->size('sm'),
+
+                            TextColumn::make('waiting_today')
+                                ->label('')
+                                ->state(fn (ServiceCategory $record) => $record->waitingToday())
+                                ->weight('bold')
+                                ->size('lg')
+                                ->alignEnd(),
+                        ]),
                     ])->space(2),
-            ])
+                ])
             ->filters([])
             ->recordActions([
                 EditAction::make()
