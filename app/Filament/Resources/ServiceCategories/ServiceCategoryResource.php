@@ -60,16 +60,16 @@ class ServiceCategoryResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->contentGrid([
-                'md' => 2,
-                'xl' => 3,
-            ])
-            ->extraAttributes(['class' => 'service-category-cards'])
-            ->recordActionsPosition(RecordActionsPosition::BeforeColumns)
-            ->columns([
+        public static function table(Table $table): Table
+        {
+            return $table
+                ->contentGrid([
+                    'md' => 2,
+                    'xl' => 3,
+                ])
+                ->extraAttributes(['class' => 'service-category-cards'])
+                ->recordActionsPosition(RecordActionsPosition::BeforeColumns)
+                ->columns([
                     Stack::make([
                         TextColumn::make('name')
                             ->label('Nama Layanan')
@@ -81,41 +81,26 @@ class ServiceCategoryResource extends Resource
                             ->color('gray')
                             ->size('sm')
                             ->limit(60),
-
-                        Split::make([
-                            TextColumn::make('waiting_today_label')
-                                ->label('')
-                                ->state('Total Antrean')
-                                ->color('gray')
-                                ->size('sm'),
-
-                            TextColumn::make('waiting_today')
-                                ->label('')
-                                ->state(fn (ServiceCategory $record) => $record->waitingToday())
-                                ->weight('bold')
-                                ->size('lg')
-                                ->alignEnd(),
-                        ]),
                     ])->space(2),
                 ])
-            ->filters([])
-            ->recordActions([
-                EditAction::make()
-                    ->label('')
-                    ->iconButton()
-                    ->color('success'),
-                DeleteAction::make()
-                    ->label('')
-                    ->iconButton()
-                    ->color('danger'),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make()
-                        ->label('Hapus Terpilih'),
-                ]),
-            ]);
-    }
+                ->filters([])
+                ->recordActions([
+                    EditAction::make()
+                        ->label('')
+                        ->iconButton()
+                        ->color('success'),
+                    DeleteAction::make()
+                        ->label('')
+                        ->iconButton()
+                        ->color('danger'),
+                ])
+                ->toolbarActions([
+                    BulkActionGroup::make([
+                        DeleteBulkAction::make()
+                            ->label('Hapus Terpilih'),
+                    ]),
+                ]);
+        }
 
     public static function getRelations(): array
     {
