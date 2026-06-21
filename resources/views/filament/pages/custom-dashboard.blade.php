@@ -25,16 +25,11 @@
 .status-selesai { background: #ebfaef; color: #008236; }
 .status-dipanggil { background: #fff5eb; color: #ca3500; }
 .status-menunggu { background: #f3f4f6; color: #6b7280; }
-.db-cta { background: linear-gradient(to right, #00a63e, #008236); border-radius: 14px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.db-cta-title { font-size: 16px; font-weight: 700; color: white; margin-bottom: 4px; }
-.db-cta-sub { font-size: 13px; color: #b9f8cf; }
-.db-cta-btn { background: white; color: #008236; font-weight: 700; font-size: 13px; padding: 10px 18px; border-radius: 10px; text-decoration: none; white-space: nowrap; }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
     .db-stats { grid-template-columns: repeat(2, 1fr); }
     .db-section { grid-template-columns: 1fr; }
-    .db-cta { flex-direction: column; align-items: flex-start; }
 }
 </style>
 
@@ -127,15 +122,6 @@
             </div>
             @endforelse
         </div>
-    </div>
-
-    {{-- CTA --}}
-    <div class="db-cta">
-        <div>
-            <div class="db-cta-title">Siap melayani nasabah?</div>
-            <div class="db-cta-sub">Panggil antrean berikutnya dari halaman Panggil Antrean</div>
-        </div>
-        <a href="/admin/panggil-antrean" class="db-cta-btn">Mulai Panggil</a>
     </div>
 </div>
 </x-filament-panels::page>
