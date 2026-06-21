@@ -102,9 +102,12 @@ button[x-on\:click*="toggleCollapsed"] svg {
     z-index: 10;
 }
 
-/* Garis pemisah antara info layanan dan Total Antrean */
-.service-category-cards .fi-ta-content-header {
-    border-bottom: 1px solid var(--gray-200, #e5e7eb) !important;
-    padding-bottom: 0.75rem !important;
-    margin-bottom: 0.75rem !important;
+/* Lebarkan container halaman supaya card-card lebih lega */
+.fi-resource-list-records-page .fi-main,
+.service-category-cards {
+    max-width: 100% !important;
+}
+
+.fi-main-ctn {
+    max-width: 100% !important;
 }
