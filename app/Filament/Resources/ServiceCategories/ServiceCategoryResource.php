@@ -20,6 +20,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\Layout\Split;
+use Filament\Tables\Enums\RecordActionsPosition;
 
 class ServiceCategoryResource extends Resource
 {
@@ -59,26 +60,33 @@ class ServiceCategoryResource extends Resource
             ]);
     }
 
-        public static function table(Table $table): Table
+    public static function table(Table $table): Table
     {
         return $table
             ->contentGrid([
                 'md' => 2,
                 'xl' => 3,
             ])
+            ->recordActionsPosition(RecordActionsPosition::BeforeColumns)
             ->columns([
                 Stack::make([
                     TextColumn::make('name')
                         ->label('Nama Layanan')
                         ->weight('bold')
-                        ->size('lg')
+                        ->size('md')
                         ->searchable(),
 
                     TextColumn::make('description')
                         ->label('Deskripsi')
                         ->color('gray')
+                        ->size('sm')
                         ->limit(60)
                         ->searchable(),
+
+                    TextColumn::make('divider')
+                        ->label('')
+                        ->state('')
+                        ->extraAttributes(['class' => 'border-t border-gray-200 dark:border-white/10 !mt-2 !pt-2']),
 
                     Split::make([
                         TextColumn::make('waiting_today_label')
@@ -91,10 +99,10 @@ class ServiceCategoryResource extends Resource
                             ->label('')
                             ->state(fn (ServiceCategory $record) => $record->waitingToday())
                             ->weight('bold')
-                            ->size('xl')
+                            ->size('lg')
                             ->alignEnd(),
                     ]),
-                ])->space(3),
+                ])->space(2),
             ])
             ->filters([])
             ->recordActions([
@@ -114,6 +122,7 @@ class ServiceCategoryResource extends Resource
                 ]),
             ]);
     }
+
     public static function getRelations(): array
     {
         return [];
