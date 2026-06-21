@@ -18,6 +18,8 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
+use Filament\Tables\Columns\Layout\Stack;
+use Filament\Tables\Columns\Layout\Split;
 
 class ServiceCategoryResource extends Resource
 {
@@ -60,29 +62,55 @@ class ServiceCategoryResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->contentGrid([
+                'md' => 2,
+                'xl' => 3,
+            ])
             ->columns([
-                TextColumn::make('name')
-                    ->label('Nama Layanan')
-                    ->searchable()
-                    ->sortable()
-                    ->weight('bold'),
+                Stack::make([
+                    Split::make([
+                        TextColumn::make('name')
+                            ->label('Nama Layanan')
+                            ->weight('bold')
+                            ->size('lg')
+                            ->searchable(),
 
-                TextColumn::make('description')
-                    ->label('Deskripsi')
-                    ->searchable()
-                    ->limit(50), 
+                        Split::make([
+                            EditAction::make()
+                                ->label('')
+                                ->iconButton()
+                                ->color('success'),
+                            DeleteAction::make()
+                                ->label('')
+                                ->iconButton()
+                                ->color('danger'),
+                        ])->grow(false),
+                    ]),
+
+                    TextColumn::make('description')
+                        ->label('Deskripsi')
+                        ->color('gray')
+                        ->limit(60)
+                        ->searchable(),
+
+                    Split::make([
+                        TextColumn::make('waiting_today')
+                            ->label('Total Antrean')
+                            ->state(fn (ServiceCategory $record) => $record->waitingToday())
+                            ->color('gray')
+                            ->size('sm'),
+
+                        TextColumn::make('waiting_today_value')
+                            ->label('')
+                            ->state(fn (ServiceCategory $record) => $record->waitingToday())
+                            ->weight('bold')
+                            ->size('xl')
+                            ->extraAttributes(['class' => 'text-right']),
+                    ]),
+                ])->space(3),
             ])
             ->filters([])
-            ->actions([
-                EditAction::make()
-                    ->label('')            
-                    ->iconButton()         
-                    ->color('success'),
-                DeleteAction::make()
-                    ->label('')            
-                    ->iconButton()         
-                    ->color('danger'),
-            ])
+            ->actions([])
             ->bulkActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make()
