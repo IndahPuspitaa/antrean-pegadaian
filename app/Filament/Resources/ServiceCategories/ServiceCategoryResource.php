@@ -82,14 +82,6 @@ class ServiceCategoryResource extends Resource
                         ->size('sm')
                         ->limit(60),
 
-                    TextColumn::make('divider')
-                        ->label('')
-                        ->state('-')
-                        ->color('transparent')
-                        ->extraAttributes([
-                            'class' => 'border-t border-gray-200 dark:border-white/10 !mt-2 !pt-2 !leading-none select-none',
-                        ]),
-
                     Split::make([
                         TextColumn::make('waiting_today_label')
                             ->label('')
@@ -103,8 +95,8 @@ class ServiceCategoryResource extends Resource
                             ->weight('bold')
                             ->size('lg')
                             ->alignEnd(),
-                    ]),
-                ])->space(2),
+                    ])->extraAttributes(['class' => 'border-t border-gray-200 dark:border-white/10 !mt-2 !pt-3']),
+                    ])->space(2),
             ])
             ->filters([])
             ->recordActions([
