@@ -59,7 +59,7 @@ class ServiceCategoryResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
+        public static function table(Table $table): Table
     {
         return $table
             ->contentGrid([
@@ -68,24 +68,11 @@ class ServiceCategoryResource extends Resource
             ])
             ->columns([
                 Stack::make([
-                    Split::make([
-                        TextColumn::make('name')
-                            ->label('Nama Layanan')
-                            ->weight('bold')
-                            ->size('lg')
-                            ->searchable(),
-
-                        Split::make([
-                            EditAction::make()
-                                ->label('')
-                                ->iconButton()
-                                ->color('success'),
-                            DeleteAction::make()
-                                ->label('')
-                                ->iconButton()
-                                ->color('danger'),
-                        ])->grow(false),
-                    ]),
+                    TextColumn::make('name')
+                        ->label('Nama Layanan')
+                        ->weight('bold')
+                        ->size('lg')
+                        ->searchable(),
 
                     TextColumn::make('description')
                         ->label('Deskripsi')
@@ -94,31 +81,39 @@ class ServiceCategoryResource extends Resource
                         ->searchable(),
 
                     Split::make([
-                        TextColumn::make('waiting_today')
-                            ->label('Total Antrean')
-                            ->state(fn (ServiceCategory $record) => $record->waitingToday())
+                        TextColumn::make('waiting_today_label')
+                            ->label('')
+                            ->state('Total Antrean')
                             ->color('gray')
                             ->size('sm'),
 
-                        TextColumn::make('waiting_today_value')
+                        TextColumn::make('waiting_today')
                             ->label('')
                             ->state(fn (ServiceCategory $record) => $record->waitingToday())
                             ->weight('bold')
                             ->size('xl')
-                            ->extraAttributes(['class' => 'text-right']),
+                            ->alignEnd(),
                     ]),
                 ])->space(3),
             ])
             ->filters([])
-            ->actions([])
-            ->bulkActions([
+            ->recordActions([
+                EditAction::make()
+                    ->label('')
+                    ->iconButton()
+                    ->color('success'),
+                DeleteAction::make()
+                    ->label('')
+                    ->iconButton()
+                    ->color('danger'),
+            ])
+            ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make()
                         ->label('Hapus Terpilih'),
                 ]),
             ]);
     }
-
     public static function getRelations(): array
     {
         return [];
