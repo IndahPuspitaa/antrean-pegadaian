@@ -46,14 +46,7 @@
                     <div class="flex w-full items-start justify-between">
                         <div class="flex w-[72px] h-[72px] items-center justify-center bg-[#00ab4e] rounded-[18px] shadow-sm group-hover:bg-[#008f41] transition-colors shrink-0">
                             @php
-                                $serviceNameLower = strtolower($service->name);
-                                $iconCode = match($serviceNameLower) {
-                                    'cicilan' => 'mdi:wallet',
-                                    'perpanjang' => 'mdi:calendar-plus',
-                                    'tabungan' => 'mdi:gold', 
-                                    'pelunasan' => 'mdi:hand-coin',
-                                    default => 'mdi:dots-horizontal-circle'
-                                };
+                                $iconCode = !empty($service->icon) ? $service->icon : 'mdi:dots-horizontal-circle';
                             @endphp
                             <span class="iconify text-white text-[40px]" data-icon="{{ $iconCode }}"></span>
                         </div>
