@@ -27,7 +27,7 @@
     </div>
 
     {{-- Main Content --}}
-    <div style="overflow-x: auto; padding-bottom: 12px; width: 100%;">
+    <div wire:poll.5s style="overflow-x: auto; padding-bottom: 12px; width: 100%;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; min-width: 750px;">
 
         {{-- Antrean Menunggu --}}
