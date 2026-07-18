@@ -33,12 +33,18 @@ class DatabaseSeeder extends Seeder
                 'sort_order' => 3
             ],
             [
-                'name' => 'Pelunasan',
-                'description' => 'Pelunasan barang gadai', 
+                'name' => 'Angsuran',
+                'description' => 'Pembayaran kredit mikro, BPKB, dan lainnya', 
                 'estimated_time' => 5, 
-                'sort_order' => 4
+                'sort_order' => 5
             ],
-        ];
+            [
+                'name' => 'Minta Tambah (MT)',
+                'description' => 'Penambahan pinjaman gadai', 
+                'estimated_time' => 5, 
+                'sort_order' => 6
+            ],
+            ];
 
         foreach ($categories as $cat) {
             ServiceCategory::create($cat);
