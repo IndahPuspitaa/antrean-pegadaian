@@ -10,6 +10,9 @@ use Carbon\Carbon;
 
 class CustomDashboard extends BaseDashboard
 {
+    protected static ?string $navigationLabel = 'Dashboard';
+    protected ?string $heading = 'Dashboard';
+    
     protected string $view = 'filament.pages.custom-dashboard';
 
     public function getSubheading(): string | Htmlable | null
