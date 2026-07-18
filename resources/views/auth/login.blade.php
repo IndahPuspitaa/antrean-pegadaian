@@ -71,7 +71,7 @@
     </div>
 
     <div class="mt-8 text-white/70 text-xs md:text-sm font-medium tracking-wide text-center">
-        &copy; 2026 Pegadaian UPC Majenang - Sistem Manajemen Antrean UPC Majenang
+        &copy; 2026 Pegadaian UPC Majenang
     </div>
 
     <script>
